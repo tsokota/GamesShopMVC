@@ -1,0 +1,24 @@
+﻿@model BusinessLogicLayer.ViewModel.GamesViewModel 
+<div class="" style="border-bottom: 1px solid black; padding-bottom: 16px; height: 240px;">
+
+    <h3 style="float: left;">@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Date</h3>
+    <br />
+    <br />
+    <br />
+    @foreach (var date in Model.Filters.AvailableDates)
+    {
+        string check = "";
+        if (date == Model.Filters.SelectedDate)
+        {
+            check = "checked=\"checked\"";
+        }
+        <div style="padding-left: 15px; position: relative;">
+
+            <label style="padding-left: 16px;">
+                <input type="radio" id="Filters_SelectedDate" name="Filters.SelectedDate" value="@date" @check />
+                @Html.DisplayFor(a => date)
+            </label>
+        </div>
+                            
+    }
+</div>

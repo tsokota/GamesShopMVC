@@ -1,0 +1,46 @@
+﻿@model BusinessLogicLayer.ViewModel.UserUpdateModel
+
+@{
+    ViewBag.Title = "UpdateUser";
+}
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+  <fieldset>
+      <legend>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Edit</legend>
+       @Html.HiddenFor(q => q.User.Id)
+		<div>
+			@Html.LabelFor(q => q.User.Login)
+			@Html.EditorFor(q => q.User.Login)
+			@Html.ValidationMessageFor(q => q.User.Login)
+		</div>
+		<div>
+			@Html.LabelFor(q => q.User.Email)
+			@Html.EditorFor(q => q.User.Email)
+			@Html.ValidationMessageFor(q => q.User.Email)
+		</div>
+		<div>
+			@Html.LabelFor(q => q.User.Password)
+			@Html.EditorFor(q => q.User.Password)
+			@Html.ValidationMessageFor(q => q.User.Password)
+			</div>
+		@if(Model.Roles != null)
+  {
+		<div>
+			Roles
+
+			@Html.DropDownListFor(q => q.SelectedRoles, new SelectList(Model.Roles, "Id", "NameRole", Model.SelectedRoles.Select(q => new { Value = q})), new { multiple = true })
+		</div>
+}
+        <p>
+            <input type="submit" value="@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink(@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.BackToList, "AuthUsers")
+</div>

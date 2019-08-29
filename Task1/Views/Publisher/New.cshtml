@@ -1,0 +1,48 @@
+﻿@model Model.Entities.Publisher
+
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Publisher</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CompanyName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CompanyName)
+            @Html.ValidationMessageFor(model => model.CompanyName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomePage)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomePage)
+            @Html.ValidationMessageFor(model => model.HomePage)
+        </div>
+
+        <p>
+            <input type="submit" value="@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.BackToList, "AllPublishers")
+</div>
+

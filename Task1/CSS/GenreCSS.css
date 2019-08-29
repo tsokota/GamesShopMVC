@@ -1,0 +1,10 @@
+﻿#ctrl {
+    display: inline-block;
+    width: 50px;
+    vertical-align: top;
+}
+ .genre{
+    padding: 5px;
+    min-width: 100px;
+    min-height: 110px;  
+} 

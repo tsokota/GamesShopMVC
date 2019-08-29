@@ -1,0 +1,9 @@
+﻿@model BusinessLogicLayer.ViewModel.GamesViewModel
+
+<div class="" style="border-bottom: 1px solid black; padding-bottom: 4px;">
+    <h3 style="">@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.GameName</h3>
+    <div class="form-group">
+        @Html.EditorFor(a => a.Filters.GameName)
+        @Html.ValidationMessageFor(a => a.Filters.GameName)
+    </div>
+</div>

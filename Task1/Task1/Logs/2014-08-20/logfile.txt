@@ -1,0 +1,7 @@
+2014-08-20 10:24:18.4785|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|result succsess - added new game: s777df, 1
+2014-08-20 10:24:18.5235|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|Action  -> New have worked success!
+2014-08-20 10:24:18.5325|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-20 11:03:43.9751|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|result succsess - added new game: s777df, 1
+2014-08-20 11:03:44.0019|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|Action  -> New have worked success!
+2014-08-20 11:03:44.0019|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:16.1642316
+2014-08-20 11:03:44.0019|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request

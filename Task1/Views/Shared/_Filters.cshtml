@@ -1,0 +1,16 @@
+﻿@model BusinessLogicLayer.ViewModel.GamesViewModel
+<form id="gameFilters" method="get" action="@Url.RouteUrl("DefaultApi", new { controller = "games", HttpRoute = true })">
+    <div class="well bs-component">
+        @Html.Partial("_GenreFilter", Model)
+        @Html.Partial("_PlatformFilter", Model)
+        @Html.Partial("_PublisherFilter", Model)
+        @Html.Partial("_MostFilter", Model)
+        @Html.Partial("_CostFilter", Model)
+        @Html.Partial("_DateFilter", Model)
+        @Html.Partial("_GameNameFilter", Model)
+        @Html.Partial("_Pagination", Model)
+        <div class="form-group">
+            <input type="submit" value="Apply filter" id="applyfilter" class="btn btn-primary" />
+        </div>
+    </div>
+</form>

@@ -1,0 +1,34 @@
+﻿@model Model.Entities.Role
+
+@{
+    ViewBag.Title = "RoleDetails";
+}
+
+<fieldset>
+    <legend>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Detail</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NameRole)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NameRole)
+    </div>
+	@if(Model.UsersInRole!= null && Model.UsersInRole.Count > 0)
+ {
+    <div class="display-label">
+        Users
+    </div>
+	 foreach(var r in Model.UsersInRole)
+	 {
+    <div class="display-field">
+        @Html.DisplayFor(model => r.Login)
+    </div>
+	}
+	}
+</fieldset>
+<p>
+    @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Edit, "UpdateRole", new { roleId=Model.Id }) |
+    @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.BackToList, "AuthRoles")
+</p>
+
+

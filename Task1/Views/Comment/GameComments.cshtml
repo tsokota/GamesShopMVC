@@ -1,0 +1,55 @@
+﻿@model  BusinessLogicLayer.ViewModel.CommentViewModel
+@{
+    ViewBag.Title = "GameComments";
+}
+<div class="media">
+    <input type="hidden" id="commentId" />
+
+    <h2>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.GameCommnets</h2>
+
+    <p>
+        @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Create, "comments", "Comment", new { answer = "" })
+    </p>
+    <table>
+        @CommentView(Model.CommentList)
+    </table>
+    @if (Model.Comment == null)
+    {
+        Html.RenderPartial("_Comment", new Model.Entities.Comment());
+    }
+    else
+    {
+        Html.RenderPartial("_CommentToComment", Model);
+    }
+
+
+    @helper CommentView(IEnumerable<Model.Entities.Comment> comments)
+{   <div class="media">
+        <div class="media-body">
+            @foreach (var item in comments)
+            {
+                Html.RenderPartial("_commentView", item);
+                @CommentView(item.Comments)
+            }
+        </div>
+    </div>
+}
+    <div style="display:none">
+        @using (Html.BeginForm("Ban", "Comment", FormMethod.Get))
+        {
+            
+            <input name="CommentId" id="baninput" value="0" />   
+            <input name="UserId" id="banUser" value="0" />    
+            <button type="submit" id="ban" name="banbutton" value="@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Bancomment" />
+        }
+
+        @using (Html.BeginForm("Remove", "Comment", FormMethod.Post))
+        {
+            <input name="CommentId" id="removeinput" value="0" />
+            <button type="submit" id="remove" value="@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Delete" />
+        }
+
+    </div>
+    <div id="dialog" title="@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.DialogWindow">
+    </div>
+</div>

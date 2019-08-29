@@ -1,0 +1,31 @@
+﻿@model BusinessLogicLayer.ViewModel.GamesViewModel
+<div class="" style="border-bottom: 1px solid black; padding-bottom: 16px; height: 115px;">
+    <h3 style="float: left;">@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Pages</h3>
+    <br />
+    <br />
+    <br />
+    <div class="form-group">
+        @Html.DropDownListFor(a => a.Pagination.CountPerPage, 
+        Model.Pagination.ItemsCount.Select(a => new SelectListItem { Text = a.Key, Value = a.Value.ToString() }))
+        @Html.HiddenFor(a => a.Pagination.PageNumber)
+        @Html.HiddenFor(a => a.Pagination.TotalPageCount)
+    </div>
+</div>
+
+
+<div class="" style="padding-bottom: 16px; height: 115px;">
+    <br />
+    <br />
+
+    <div class="form-group">
+
+        @Html.Label("pagenum", "Page:")  @Html.DisplayFor(a => a.Pagination.PageNumber)
+
+        <input type="button" value="@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Previous" id="prevpage" />
+
+        <input type="button" value="@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Next" id="nextpage" />
+
+        @Html.Label("maxpages", "Total: ")
+        @Html.DisplayFor(a => a.Pagination.TotalPageCount)
+    </div>
+</div>

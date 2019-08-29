@@ -1,0 +1,25 @@
+﻿@model Model.Entities.Publisher
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Delete</h2>
+
+<h3>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.SureDelete</h3>
+<fieldset>
+    <legend>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Publisher</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CompanyName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CompanyName)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.BackToList, "AllPublishers")
+    </p>
+}

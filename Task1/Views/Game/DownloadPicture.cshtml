@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model string
+@section head
+{
+  <script type="text/javascript" src="~/Scripts/jquery.uploadify.min.js"></script>
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('#file_upload').uploadify({
+            'preventCaching': false,
+            'uploader': '@Url.Action("DownloadPicture", "Game")',
+            'swf': '/Scripts/images/uploadify.swf',           
+            'cancelImg': '@Url.Content("~/Scripts/images/uploadify-cancel.png")',
+            'buttonText': 'Select picture',
+            'script': $('form').attr('action'),
+            'fileDesc': 'Image Files',
+            'fileTypeExts': '*.jpg;*.jpeg;*.gif;*.png; *.txt;',
+            'multi': false,
+            'auto': true,
+            'scriptData': { thisGuid: $('#id').val() },
+            'onUploadSuccess' : function(file, data) {
+                //data is whatever you return from the server
+                //we're sending the URL from the server so we append this as an image to the #uploaded div
+                $("#uploaded").append("<img src='" + file.name + "' alt='Uploaded Image' />");
+            },
+            'onError': function (event, queueID, fileObj, errorObj) {
+                alert("Error!!! Type: [" + errorObj.type + "] Info [" + errorObj.info + "]");
+
+            }
+        });
+    });
+</script>
+
+@using (Html.BeginForm("DownloadPicture", "Game", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{        
+    <input id="id" name="gameKey" type="hidden" value="@Model" />
+    <input id="file_upload" type="file" name="fileData" />
+    <input type="submit" value="Upload file" />
+    <div id="uploaded">
+    </div>
+    @Html.ActionLink("Back", "AllGames", "Game" )
+}

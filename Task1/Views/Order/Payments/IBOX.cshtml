@@ -1,0 +1,45 @@
+﻿@model BusinessLogicLayer.ViewModel.IBOXViewModel
+
+@{
+    ViewBag.Title = "IBox";
+}
+
+
+
+
+	
+<h2>IBox</h2>
+
+  <script src="http://danstar.com.ua/tmp/Ibox.js"></script>
+  @System.Web.Optimization.Scripts.Render("~/IBOX")
+<div>IBOX ID:  <span id="IBOXID"></span></div>
+@using (Html.BeginForm("IBOX", "Order", FormMethod.Post))
+{
+	@Html.AntiForgeryToken()
+	@Html.ValidationSummary(true)
+
+    	<div class="editor-label">
+			@Html.LabelFor(model => model.PriceOrder)
+		</div>
+		<div class="editor-field">
+			@Html.DisplayFor(model => model.PriceOrder)
+		</div>
+
+		<div class="editor-label">
+			@Html.LabelFor(model => model.UserId)
+		</div>
+		<div class="editor-field">
+			@Html.DisplayFor(model => model.UserId)
+		</div>
+
+		<div class="editor-label">
+			@Html.LabelFor(model => model.OrderId)
+		</div>
+		<div class="editor-field">
+			@Html.DisplayFor(model => model.OrderId)
+		</div>
+
+	
+
+}
+

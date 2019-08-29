@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+  
+    @System.Web.Optimization.Styles.Render("~/Content/themes/base/css")
+    @System.Web.Optimization.Scripts.Render("~/StoreJavaScript")
+    @System.Web.Optimization.Scripts.Render("~/GenreJS")
+    @System.Web.Optimization.Styles.Render("~/content/css")
+    @System.Web.Optimization.Scripts.Render("~/js")
+    @RenderSection("head", required: false)
+  
+
+  
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="page-header">
+                <div class="row">
+                    <ul class="nav nav-pills">
+                        <li>
+                            <a title="@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Russian" href="@Url.Action("ChangeCulture", new { langCode = "ru", returnUrl = this.Request.RawUrl })">
+                                @Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Russian
+                            </a>
+                        </li>
+                        <li>
+                            <a title="@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.English" href="@Url.Action("ChangeCulture", new { langCode = "en", returnUrl = this.Request.RawUrl })">
+                                @Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.English
+                            </a>
+                        </li>
+
+                        <li class="pull-right">
+                            @Html.Action("UserLogin", "Autentification")
+                        </li>
+                        <li> @Html.Partial("_Busket") </li>
+                        <li>
+                            @{Html.RenderAction("BusketItem", "Order");}
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <a href="@Url.Action("AllGames", "Game")" style="display:inline-block"><img class="image-responsive" width="75" height="75" src="~/Content/images/9-30-minimal.jpg " /></a>
+                    <div class="pull-right" style="margin-top: 10%">
+
+                    </div>
+                    <div class="navbar navbar-default offset2">
+                        <div class="navbar navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="navbar-collapse collapse navbar-responsive-collapse" style="background-color:#ab0000;">
+                            <ul class="nav navbar-nav">
+
+                                <li>
+                                    @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Orders, "Index", "Order")
+                                </li>
+
+                                <li>
+                                    @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Games, "AllGames", "Game")
+
+                                </li>
+                                @if (User.IsInRole("Administrator") || User.IsInRole("Manager") || User.IsInRole("Publisher"))
+                                {
+                                    <li>
+                                        @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Users, "AuthUsers", "Admin")
+
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Roles, "AuthRoles", "Admin")
+
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Publishers, "AllPublishers", "Publisher")
+
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Genres, "Index", "Genre")
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.OrdersHistory, "history", "Order")
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Shippers, "Index", "Shipper")
+
+                                    </li>
+                                }
+                                else { }
+                            </ul>
+                            <div class="navbar-text navbar-right">
+
+                                @Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.CountGame: @{Html.RenderAction("GamesCount", "Game");}
+
+                            </div>
+                        </div>
+                    </div>
+                    <img src="~/Content/images/raven.png" style="width: 100%; height:90%; margin-bottom: 20px;" />
+                    <img src="~/Content/images/raven-logo.jpg" style="width: 15%; margin-top: -12%; margin-left: 80%;" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                    @RenderBody()
+                </div>
+                <div class="col-md-3">
+                    @if (IsSectionDefined("rightSidebar"))
+                    {
+                        @RenderSection("rightSidebar", required: false)
+                    }
+                    else
+                    {
+
+                        <p>
+                            <img src="~/Content/images/landing.jpg" class="img-responsive" />
+                        </p>
+
+                        <p>
+                            <img src="~/Content/images/sqsp5.jpg" class="img-responsive" />
+                        </p>
+
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>GET IN TOUCH</h3>
+                        <div class="well bs-component">
+                            <form class="form-horizontal">
+                                <fieldset>
+                                    <legend></legend>
+                                    <br /> <br />
+                                    <div class="form-group">
+                                        <label for="inputName" class="col-lg-2 control-label">Name</label>
+                                        <div class="col-lg-10">
+                                            <input type="text" class="form-control" id="inputName" placeholder="Name" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                                        <div class="col-lg-10">
+                                            <input type="email" class="form-control" id="inputEmail" placeholder="Email" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="textArea" class="col-lg-2 control-label">Text</label>
+
+
+                                        <div class="col-lg-10">
+                                            <textarea class="form-control" id="textArea" placeholder="Text"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-10 col-lg-offset-2">
+
+
+                                            <button class="btn btn-primary" type="submit">Submit</button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>TWITTER UPDATES</h3>
+                        <div class="well bs-component">
+                            <p>
+                                Pavel Durov ‏@@durov  Sep 27
+                                Never seen such a massive DDoS attack like we're having today at @@telegram.
+                                And I've seen some nasty ones in my days at @@vkontakte. #success
+                            </p>
+                            <hr />
+                            <p>
+                                Pavel Durov ‏@@durov  Sep 25
+                                @@insanelyfrin Telegram for iOS uses Dynamic Type.
+                                Try enlarging the default text size in the settings of your iPad (Accessibility).
+                            </p>
+                            <p>
+                                Pavel Durov @@durov  Jun 25
+                                According to @@ICPCNews, the team of Saint Petersburg State University just won at the world's programming contest.
+                                Congratulations!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>FROM THE BLOG</h3>
+                        <div class="well bs-component">
+                            <p>
+                                Pavel Durov ‏@@durov  Sep 27
+                                Never seen such a massive DDoS attack like we're having today at @@telegram.
+                                And I've seen some nasty ones in my days at @@vkontakte. #success
+                            </p>
+                            <hr />
+                            <p>
+                                Pavel Durov ‏@@durov  Sep 25
+                                @@insanelyfrin Telegram for iOS uses Dynamic Type.
+                                Try enlarging the default text size in the settings of your iPad (Accessibility).
+                            </p>
+                            <p>
+                                Pavel Durov @@durov  Jun 25
+                                According to @@ICPCNews, the team of Saint Petersburg State University just won at the world's programming contest.
+                                Congratulations!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+
+
+                            <p>
+                                Pavel Durov ‏@@durov  Sep 27
+                                Never seen such a massive DDoS attack like we're having today at @@telegram.
+                                And I've seen some nasty ones in my days at @@vkontakte. #success
+                            </p>
+
+
+                        </div>
+                        <div class="col-md-4">
+
+
+                            <p>
+                                Pavel Durov ‏@@durov  Sep 27
+                                Never seen such a massive DDoS attack like we're having today at @@telegram.
+                                And I've seen some nasty ones in my days at @@vkontakte. #success
+                            </p>
+
+
+                        </div>
+                        <div class="col-md-4">
+
+
+                            <p>
+                                Pavel Durov ‏@@durov  Sep 27
+                                Never seen such a massive DDoS attack like we're having today at @@telegram.
+                                And I've seen some nasty ones in my days at @@vkontakte. #success
+                            </p>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+@RenderSection("scripts", false)
+</body>
+</html>

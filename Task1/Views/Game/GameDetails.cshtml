@@ -1,0 +1,184 @@
+﻿@using System.Web.Optimization
+@using Yevhenii_KoliesnikTask1.App_LocalResources
+@model Model.Entities.Game
+
+@{
+    ViewBag.Title = "GameDetails";
+}
+<script src="//cdn.ckeditor.com/4.4.5/full/ckeditor.js"></script>
+<input type="hidden" id="GameKey" value="@Model.Key" />
+
+<div class="panel">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-2 col-sm-3 text-center">
+                <a class="story-img" href="#">
+                    @if (Model.Picture != "")
+                    {
+                        <img src="~/Content/images/gamepicture/@Model.Picture" width="100" height="100" alt="" class="img-circle">
+                    }
+                    else
+                    {
+                        <img src="~/Content/images/gamepicture/100x100.gif" width="100" height="100" alt="" class="img-circle">
+                    }
+                </a>
+            </div>
+            <div class="col-md-10 col-sm-9">
+                <h3>@Model.Name</h3>
+                @if (Model.Publisher == null)
+                {
+
+                    <h5>Unknown</h5>
+                }
+                else
+                {
+
+                    <h5>@Html.ActionLink(Model.Publisher.CompanyName, "PublisherDetails", "Publisher", new { companyName = Model.Publisher.CompanyName }, null) </h5>
+                }
+                <div class="row">
+                    <div class="col-xs-9">
+                        <p>
+                            @Html.Raw(Model.Description)
+                        </p>
+
+                        <p class="pull-right">
+                            @if (Model.Genres != null)
+                            {
+                                foreach (var genre in Model.Genres)
+                                {
+                                    <span class="label label-default">@genre.Name</span>
+                                }
+                            }
+                            else
+                            {
+
+                                <span class="label label-default">Other</span>
+                            }
+                        </p>
+                        <ul class="list-inline">
+
+
+                            <li>
+                                <i class="glyphicon glyphicon-comment"></i>
+                                @Html.ActionLink(GlobalRes.Comments, "GameComments", "Comment", new { gamekey = Model.Key }, null)
+
+
+                            </li>
+                            @if (Model.IsDeleted && User.IsInRole("User"))
+                            {
+
+                                <li>Game have daleted by moderator</li>
+                            }
+                            else
+                            {
+
+                                <li>
+                                    <i class="glyphicon glyphicon-floppy-save"></i>
+                                    @Html.ActionLink(GlobalRes.Download, "downloads", "Game", new { gamekey = Model.Key }, new { target = "_blank" })
+
+                                </li>
+
+                                <li>
+                                    <i class="glyphicon glyphicon-shopping-cart"></i>
+                                    @Html.ActionLink(GlobalRes.Buy, "buy", "Game", new { gamekey = Model.Key }, null)
+                                </li>
+                            }
+                            <li>
+                                <i class="glyphicon glyphicon-usd"></i>
+                                @Model.Price uah
+                            </li>
+                            <li>
+                                @if (@Model.GameProduction == default(DateTime))
+                                {
+                                    @:UKNOWN
+                                }
+                                else
+                                {
+                                    @Model.GameProduction.ToShortDateString()
+                                }
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="label label-default">
+                    <a id="show_comments">@GlobalRes.ShowComments</a>
+                    <a id="hide_comments" class="hidden">@GlobalRes.HideComments</a>
+                </div>
+                <div id="comments" class="hidden">
+                    @GlobalRes.NoComments
+                </div>
+                <input type="hidden" id="comlink" value='@Url.HttpRouteUrl("commentsApi2", new { gamekey = Model.Key, controller = "Comments", action = "PostComment" })' />
+                <div id="inputComment">
+
+
+                    <label class="newcomment" hidden="hidden">
+                        ParentId:  @Html.TextBox("ParentId", "0", new { @readonly = true })
+                    </label>
+                    <label class="newcomment" hidden="hidden">
+                        QuteId:  @Html.TextBox("QuteId", "0", new { @readonly = true })
+                    </label>
+                    <div id="title">
+                    </div>
+                    <p>
+                        @Html.Hidden("gamekey", Model.Key)
+                        @Html.Label("s", "body")
+                    </p>
+                    <p>
+                        @Html.TextArea("body", new { id = "editorSmall" })
+                    </p>
+                    <p>
+                        @Html.Label("a", "author")
+                    </p>
+                    <p>
+                        @Html.TextBox("authorName")
+                    </p>
+                    <input type="submit" value="Add" id="addComment" />
+                    <input type="button" value="Del" id="del" />
+                </div>
+
+                @Html.Hidden("IsModerator", System.Threading.Thread.CurrentPrincipal.IsInRole("Moderator").ToString())
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    <script src="http://www.jsviews.com/download/jsrender.js"></script>
+    <script id="commentTemplate" type="text/jsrender-tmpl">
+
+
+        <div>
+            <div id="comment_{{:Id}}">
+                <div id="author_{{:Id}}">
+                    User: {{:AuthorName}}
+                </div>
+                <div>
+                    Comment: {{:Body}}
+                </div>
+            </div>
+            <input id="answer_{{:Id}}" type="button" value="Answer" class="answerButton" />
+            <input id="quote_{{:Id}}" type="button" value="Quote" class="quoteButton" />
+            {{if ~isModerator() == 'True'}}
+            <button id="@Model.Id" class="dialog" name="banbatton" onclick="setID({{:Id}}, {{:UserId}});">@GlobalRes.Delete/BAN</button>
+            {{/if}}
+            <br />
+
+            {{if Comments!= null }}
+            <div style="margin-left: 25px;">
+                {{for Comments tmpl="#commentTemplate"/}}
+            </div>
+            {{/if}}
+        </div>
+
+    </script>
+    @Scripts.Render("~/CommentAjax")
+}
+
+@Html.Partial("_HiddenDiv")
+@System.Web.Optimization.Scripts.Render("~/WYSIWYGeditor")
+
+
+

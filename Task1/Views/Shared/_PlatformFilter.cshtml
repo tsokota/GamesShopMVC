@@ -1,0 +1,22 @@
+﻿@model BusinessLogicLayer.ViewModel.GamesViewModel
+@if (Model.Filters.AvailablePlatforms != null)
+{
+    <div class="" style="border-bottom: 1px solid black; padding-bottom: 16px;">
+        <h3 style="">@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Platforms</h3>
+        @foreach (var platform in Model.Filters.AvailablePlatforms)
+        {
+            string check = "";
+            if (Model.Filters.SelectedPlatforms != null && Model.Filters.SelectedPlatforms.Contains(platform.Id))
+            {
+                check = "checked=\"checked\"";
+            }
+            <div style="padding-left: 15px; position: relative;">
+                <label style="padding-left: 16px;">
+                    <input type="checkbox"  style="margin-right: 5px; position: absolute; left: 10px;"  id="Filters_SelectedPlatforms" name="Filters.SelectedPlatforms" value="@platform.Id" @check />
+                    @Html.DisplayFor(a => platform.Name)
+                </label>
+
+            </div>
+        }
+    </div>
+}

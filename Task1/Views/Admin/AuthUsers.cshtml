@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Model.Entities.User>
+
+
+
+<fieldset>
+	<legend>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Users</legend>
+	 @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Create, "CreateUser", "Admin") |
+	@Html.ActionLink(@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Roles, "Roles", "Admin")
+	<div>
+		@foreach (var u in Model)
+  {
+	  <fieldset>
+		  <div>
+			  @Html.LabelFor(q => u.Login):
+			   @Html.DisplayFor(q => u.Login)
+		  </div>
+		  <div>
+			   @Html.LabelFor(q => u.Email):
+			  @Html.DisplayFor(q => u.Email)
+		  </div>
+		  <div>
+			@Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Detail, "UserDetails", "Admin", new { userId = u.Id }, null) | 
+			@Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Edit, "UpdateUser", "Admin", new { userId = u.Id }, null) | 
+			@Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Delete, "DeleteUser", "Admin", new { userId = u.Id }, null)
+		  </div>
+	  </fieldset>
+  }
+	</div>
+</fieldset>

@@ -1,0 +1,36 @@
+﻿@model Model.Entities.Publisher
+
+@{
+    ViewBag.Title = "PublisherDetails";
+}
+
+<h2>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.PublisherDetails</h2>
+
+<fieldset>
+    <legend>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Publisher</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CompanyName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CompanyName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HomePage)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HomePage)
+    </div>
+</fieldset>
+<p>    
+   
+    @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.BackToList, "AllPublishers")
+</p>

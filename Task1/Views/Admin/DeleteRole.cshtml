@@ -1,0 +1,37 @@
+﻿@model Model.Entities.Role
+
+@{
+    ViewBag.Title = "DeleteRole";
+}
+<h3>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.SureDelete</h3>
+<fieldset>
+    <legend>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Delete</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NameRole)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NameRole)
+    </div>
+	@if(Model.UsersInRole!= null && Model.UsersInRole.Count > 0)
+ {
+    <div class="display-label">
+        Users
+    </div>
+	 foreach(var r in Model.UsersInRole)
+	 {
+    <div class="display-field">
+        @Html.DisplayFor(model => r.Login)
+    </div>
+	}
+ }
+
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.BackToList, "AuthRoles")
+    </p>
+}
+

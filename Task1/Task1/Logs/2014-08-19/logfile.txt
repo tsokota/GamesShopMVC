@@ -1,0 +1,2 @@
+2014-08-19 18:52:26.2881|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|result succsess - added new game: s777df, 1
+2014-08-19 18:52:26.3624|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|Action  -> New have worked success!

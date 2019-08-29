@@ -1,0 +1,57 @@
+﻿
+@model BusinessLogicLayer.ViewModel.CommentViewModel
+
+@{
+    ViewBag.Title = "Answer";
+}
+ <script src="//cdn.ckeditor.com/4.4.5/full/ckeditor.js"></script>
+<h2>Answer</h2>
+<div class="well">
+@using (Html.BeginForm("newcomment", "Comment", FormMethod.Post, new { @class = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Answer to @Model.ParentComment.AuthorName</legend>
+        
+        <div>
+            @Html.HiddenFor(m => m.ParentComment.Id)
+            @Html.HiddenFor(m => m.ParentComment.AuthorName)
+            @Html.HiddenFor(m => m.ParentComment.Body)
+            @Html.HiddenFor(m => m.ParentComment.ParentName)
+            @Html.HiddenFor(m => m.ParentComment.DateComment)
+            @Html.HiddenFor(m => m.GameKey)
+         
+             
+            @if (Model.QuoteTag != string.Empty)
+            {               
+                <h3>@Html.Raw(Model.QuoteTag)</h3>  
+                Model.QuoteTag = Model.ParentComment.Body;
+            }
+              @Html.HiddenFor(m => m.QuoteTag)  
+
+        <div class="form-group">
+                    @Html.LabelFor(model => model.Comment.Body)
+                    @Html.TextAreaFor(model => model.Comment.Body, new { @class = "form-control  editor  editor-field  editorSmall", id = "editorSmall" })
+                    @Html.ValidationMessageFor(model => model.Comment.Body)<br/>
+                </div>
+          
+
+              <div class="form-group">
+                    @Html.LabelFor(model => model.Comment.AuthorName)
+                    @Html.EditorFor(model => model.Comment.AuthorName, new { @class = "form-control" })
+                  <label></label>
+                    @Html.ValidationMessageFor(model => model.Comment.AuthorName)
+                </div>
+             </div>
+        <p>
+            <input type="submit" value="@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Create" class="btn btn-primary"/>
+        </p>
+    </fieldset>
+}
+
+
+
+    </div >
+ @System.Web.Optimization.Scripts.Render("~/WYSIWYGeditor")

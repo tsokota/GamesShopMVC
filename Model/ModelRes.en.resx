@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AuthorName" xml:space="preserve">
+    <value>Author Name Required</value>
+  </data>
+  <data name="AuthorNameComment" xml:space="preserve">
+    <value>Author Name Comment</value>
+  </data>
+  <data name="Body" xml:space="preserve">
+    <value>Body   Required</value>
+  </data>
+  <data name="CommentBody" xml:space="preserve">
+    <value>Comment Body</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Company Name</value>
+  </data>
+  <data name="CompanyNameRequired" xml:space="preserve">
+    <value>Company Name Required</value>
+  </data>
+  <data name="DateComment" xml:space="preserve">
+    <value>DateComment Required</value>
+  </data>
+  <data name="DateComments" xml:space="preserve">
+    <value>Date Comments</value>
+  </data>
+  <data name="Descrioptions" xml:space="preserve">
+    <value>Descrioptions</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description Required</value>
+  </data>
+  <data name="DescriptionRequired" xml:space="preserve">
+    <value>Description Required</value>
+  </data>
+  <data name="Discontinued" xml:space="preserve">
+    <value>Discontinued</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>Discount</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmailRequired" xml:space="preserve">
+    <value>Email Required</value>
+  </data>
+  <data name="GameProduction" xml:space="preserve">
+    <value>Game Production Required</value>
+  </data>
+  <data name="GameProductions" xml:space="preserve">
+    <value>Game Productions</value>
+  </data>
+  <data name="GenreNameRequired" xml:space="preserve">
+    <value>Genre Name Required</value>
+  </data>
+  <data name="HomePage" xml:space="preserve">
+    <value>HomePage</value>
+  </data>
+  <data name="IsDeleted" xml:space="preserve">
+    <value>IsDeleted Required</value>
+  </data>
+  <data name="isDeletedRequired" xml:space="preserve">
+    <value>is Deleted Required</value>
+  </data>
+  <data name="IsRemove" xml:space="preserve">
+    <value>IsRemove</value>
+  </data>
+  <data name="Key" xml:space="preserve">
+    <value>Key Required</value>
+  </data>
+  <data name="KeyGame" xml:space="preserve">
+    <value>Key Game</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LoginRequired" xml:space="preserve">
+    <value>Login Required</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name Required</value>
+  </data>
+  <data name="NamePlatform" xml:space="preserve">
+    <value>Name Platform</value>
+  </data>
+  <data name="NameRoleRequired" xml:space="preserve">
+    <value>Name Role Required</value>
+  </data>
+  <data name="OrderDate" xml:space="preserve">
+    <value>Order Date</value>
+  </data>
+  <data name="OrderPrice" xml:space="preserve">
+    <value>OrderPrice</value>
+  </data>
+  <data name="OrderType" xml:space="preserve">
+    <value>Order Type</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PasswordRequired" xml:space="preserve">
+    <value>Password Required</value>
+  </data>
+  <data name="PlatformRequired" xml:space="preserve">
+    <value>Platform Required</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price  Required</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="RoleName" xml:space="preserve">
+    <value>Role Name</value>
+  </data>
+  <data name="ShippedDate" xml:space="preserve">
+    <value>Shipped Date</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="UnitsInStock" xml:space="preserve">
+    <value>UnitsInStock Required</value>
+  </data>
+  <data name="UnitsInStocks" xml:space="preserve">
+    <value>Units In Stocks</value>
+  </data>
+  <data name="NameGame" xml:space="preserve">
+    <value>Name Game</value>
+  </data>
+  <data name="Descriptions" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Prices" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="beginBan" xml:space="preserve">
+    <value>Begin Ban</value>
+  </data>
+  <data name="beginBanError" xml:space="preserve">
+    <value>requared begin error field</value>
+  </data>
+  <data name="lastBan" xml:space="preserve">
+    <value>End Ban</value>
+  </data>
+  <data name="lastBanError" xml:space="preserve">
+    <value>requared end error field</value>
+  </data>
+  <data name="reasonBan" xml:space="preserve">
+    <value>Ban reasone</value>
+  </data>
+  <data name="reasonBanError" xml:space="preserve">
+    <value>requared reasone error field</value>
+  </data>
+</root>

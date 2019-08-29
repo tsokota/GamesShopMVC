@@ -1,0 +1,34 @@
+﻿@model BusinessLogicLayer.ViewModel.RoleViewModel
+
+@{
+    ViewBag.Title = "CreateRole";
+}
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Create</legend>
+		<div>
+			@Html.LabelFor(q => q.Role.NameRole)
+			@Html.EditorFor(q => q.Role.NameRole)
+			@Html.ValidationMessageFor(q => q.Role.NameRole)
+		</div>
+		@if(Model.Users != null)
+  {
+		<div>
+			Users
+			@Html.DropDownListFor(q => q.SelectedUsers, new SelectList(Model.Users, "Id", "Login"), new { multiple= true})
+		</div>
+  }
+        <p>
+            <input type="submit" value="@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink(@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.BackToList, "AuthRoles")
+</div>

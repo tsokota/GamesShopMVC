@@ -1,0 +1,116 @@
+﻿@model BusinessLogicLayer.ViewModel.UserView
+@{
+    
+   
+}
+
+
+
+<div class="col-lg-6 col-lg-offset-3">
+    <div class="well bs-component">
+        @using (Html.BeginForm("Register", "Autentification", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            @Html.ValidationSummary()
+
+            <fieldset>
+                <legend>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Registers
+                </legend>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.Email, new { @class = "col-lg-2 control-label" })
+                    <div class="col-lg-10">
+                        @Html.TextBoxFor(x => x.Email, Model.Email, new { @class = "form-control", placeholder = @Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Emails, type="email"})
+                    </div>
+                    @Html.ValidationMessageFor(x => x.Email)
+                </div>
+                   <div class="form-group">
+                    @Html.LabelFor(x => x.Login, new { @class = "col-lg-2 control-label" })
+                    <div class="col-lg-10">
+                        @Html.TextBoxFor(x => x.Login, Model.Login, new { @class = "form-control", placeholder = @Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Login })
+                    </div>
+                    @Html.ValidationMessageFor(x => x.Login)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.Password, new { @class = "col-lg-2 control-label" })
+                    <div class="col-lg-10">
+                        @Html.PasswordFor(x => x.Password, new { @class = "form-control", placeholder = @Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Password })
+                        @Html.ValidationMessageFor(x => x.Password)
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.ConfirmPassword, new { @class = "col-lg-2 control-label" })
+                    <div class="col-lg-10">
+                        @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "form-control", placeholder = @Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.ConfirmPassword })
+                        @Html.ValidationMessageFor(x => x.Password)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label" for="FirstName">
+                        @Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.BirthDate
+                    </label>
+                    <div class="col-lg-3">
+                         <input type="date" name="BirthdateDate" />
+                        @Html.ValidationMessage("BirthdateDate")
+                    </div>
+
+
+                    <div class="form-group">
+                      
+                        <div class="col-lg-10">
+                            @Html.ValidationMessage("Captcha")
+                            @Html.TextBox("Captcha", Model.Captcha)
+                            
+                        </div>
+                         <div class="col-lg-10">
+                             <img src="@Url.Action("Captcha", "Autentification")" alt="captcha" />
+                             </div>
+                    </div>
+
+                </div>
+            </fieldset>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                    @Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Registers
+                </button>
+                @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Cancel, "AllGames", "Games", null, null)
+            </div>
+            
+        }
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

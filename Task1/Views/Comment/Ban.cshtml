@@ -1,0 +1,22 @@
+﻿@model BusinessLogicLayer.ViewModel.BanModelView
+@{
+    ViewBag.Title = "Ban";
+}
+<div class="col-lg-7 col-lg-offset-3">
+    <div class="well bs-component">
+        @using (Html.BeginForm("Ban", "Comment", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            <input type ="hidden" name="Model.userBan.IdComment" value="@Model.UserBan.IdComment"/>
+            <input type ="hidden" name="Model.userBan.IdUser" value="@Model.UserBan.IdUser"/>
+            <div class="form-group">
+               
+                @Html.DropDownListFor(a => a.BanVariant,
+                Model.BanTime.Select(a => new SelectListItem { Text = a.Key, Value = a.Value.ToString() }))
+                @Html.DisplayNameFor(model => model.UserBan.ReasonBan)
+                @Html.EditorFor(model => model.UserBan.ReasonBan)
+                <input type="submit" value="@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Save" class="btn btn-primary"/>
+            </div>
+               @Html.ValidationMessageFor(model => model.UserBan.ReasonBan)
+        }
+    </div>
+</div>

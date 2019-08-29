@@ -1,0 +1,29 @@
+2014-08-28 13:09:55.4056|ERROR|BusinessLogicLayer.Services.GameService|some error: Controller: Game, Action: AllGame
+Database '' cannot be created because it already exists.
+2014-08-28 13:09:55.8156|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:23.2453629
+2014-08-28 13:09:55.8156|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-28 13:10:43.5034|ERROR|BusinessLogicLayer.Services.GameService|some error: Controller: Game, Action: AllGame
+Object reference not set to an instance of an object.
+2014-08-28 13:10:43.5034|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:23.2453629
+2014-08-28 13:10:43.5034|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-28 13:12:29.7884|ERROR|BusinessLogicLayer.Services.GameService|some error: Controller: Game, Action: AllGame
+Object reference not set to an instance of an object.
+2014-08-28 13:12:29.8104|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:19.0467801
+2014-08-28 13:12:29.8104|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-28 13:13:38.0864|ERROR|BusinessLogicLayer.Services.GameService|some error: Controller: Game, Action: AllGame
+Object reference not set to an instance of an object.
+2014-08-28 13:13:38.1074|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:13.9321873
+2014-08-28 13:13:38.1074|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-28 13:14:47.7223|DEBUG|BusinessLogicLayer.Services.GameService|result succsess - AllGames
+2014-08-28 13:14:47.7223|DEBUG|BusinessLogicLayer.Services.GameService|result succsess - AllGames
+2014-08-28 13:14:47.7573|DEBUG|BusinessLogicLayer.Services.GameService|Action  -> have worked success!
+2014-08-28 13:14:47.7573|DEBUG|BusinessLogicLayer.Services.GameService|Action  -> have worked success!
+2014-08-28 13:14:47.7573|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:07.0593722
+2014-08-28 13:14:47.7573|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:07.0593722
+2014-08-28 13:14:47.7573|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-28 13:14:47.7573|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-28 13:15:02.7722|DEBUG|BusinessLogicLayer.Services.GameService|result succsess - AllGames
+2014-08-28 13:15:02.7722|DEBUG|BusinessLogicLayer.Services.GameService|Action  -> have worked success!
+2014-08-28 13:15:02.7722|DEBUG|BusinessLogicLayer.Services.GameService|Action  -> GameDetails() have worked success!
+2014-08-28 13:15:02.7722|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:07.0781654
+2014-08-28 13:15:02.7722|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request

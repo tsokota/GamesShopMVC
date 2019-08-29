@@ -1,0 +1,48 @@
+﻿@model Model.Entities.Order
+@{
+    ViewBag.Title = "Busket";
+}
+@*@if (Model.Count == 0)
+{
+    <h2>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.BusketNullMessage</h2>
+}
+else
+{
+    foreach (var Model in Model)
+    {*@
+        <div class="jumbotron">
+            <div class="display-label">
+                @Html.DisplayNameFor(model => Model.OrderDate)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => Model.OrderDate)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(model => Model.User.Login)
+                <b>@Html.DisplayFor(model => Model.User.Login)</b>
+            </div>
+            <div>
+                @Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Status:<b>
+                    @Html.DisplayFor(model => Model.OrderStatus)
+                </b>
+
+            </div>
+
+
+            @foreach (var detail in Model.OrderDetails)
+            {
+                <fieldset>
+                    <legend>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Detail</legend>
+                    <ul>
+                        <li>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Name : <b>@detail.Product.Name</b></li>
+                        <li>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Price :    @detail.Price</li>
+                        <li>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Quantity : @detail.Quantity</li>
+                        <li>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Discount : @detail.Discount </li>
+                    </ul>
+                </fieldset>
+            }
+            @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.MakeOrder, "MakeOrder", "Order", new { orderId = Model.Id }, null)
+        </div>
+    @*}*@
+@*}*@

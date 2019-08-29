@@ -1,0 +1,28 @@
+﻿@model Model.Entities.Order
+
+
+
+<div class="display-label">
+    @Html.DisplayNameFor(m => Model.OrderDate)
+</div>
+<div class="display-field">
+    @Html.DisplayFor(model => Model.OrderDate)
+</div>
+@Model.Id
+<div class="display-label">
+    @Html.DisplayNameFor(model => Model.CustomerId)
+</div>
+
+<fieldset>
+    <legend>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Detail</legend>
+    @foreach (var detail in Model.OrderDetails)
+    {
+
+        <p>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Price :    @detail.Price</p>
+        <p>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Quantity : @detail.Quantity</p>
+        <p>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Discount : @detail.Discount</p>
+        
+    }
+</fieldset>
+
+<p>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Status : @Model.OrderStatus</p>

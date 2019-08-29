@@ -1,0 +1,36 @@
+﻿@model PaymentOrderViewModel
+
+@using BusinessLogicLayer.ViewModel
+@{
+    ViewBag.Title = "Make order";
+}
+
+<h2>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.MakeOrder</h2>
+<p>@Html.DisplayNameFor(a => a.Order.User.Login)</p>
+<p>@Html.DisplayFor(a => a.Order.User.Login)</p>
+<p>@Html.DisplayNameFor(a => a.Order.OrderDate)</p>
+<p>@Html.DisplayFor(a => a.Order.OrderDate)</p>
+<p>@Html.DisplayNameFor(a => a.Order.OrderStatus)</p>
+<p>@Html.DisplayFor(a => a.Order.OrderStatus)</p>
+
+
+<h3>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.PaymentMethods</h3>
+<div id="payment">
+    @using (Html.BeginForm(new { orderId = Model.Order.Id}))
+    {
+        @Html.AntiForgeryToken()
+
+        foreach (var method in Model.PaymentMethods)
+        {
+        <span>
+            @Html.RadioButton("payment", method.Name)
+             
+                    <img  src="@Url.Content(method.ImagePath)" alt ="all" width="100" height="100" />
+           
+            @Html.DisplayFor(a => method.Name) (@Html.DisplayFor(a => method.Description))
+            <br />
+        </span>
+        }
+        <input type="submit" value="@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Select" />
+    }
+</div>

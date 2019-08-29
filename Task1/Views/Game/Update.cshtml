@@ -1,0 +1,140 @@
+﻿@model BusinessLogicLayer.ViewModel.UpdateGameModel
+
+<div class="col-lg-6 col-lg-offset-3">
+    <div class="well bs-component">
+
+
+        @using (Html.BeginForm("Update", "Game", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            @Html.ValidationSummary()
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(a => a.Game.Id)
+            @Html.HiddenFor(a=>a.GameKey)
+            @Html.HiddenFor(a=>a.Game.Key)
+            <fieldset>
+                <legend>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Edit
+                </legend>
+                @Html.ActionLink("Download Picture","DownloadPicture", "Game", new {key= @Model.GameKey}, null)
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(a => a.Game.Key)
+                    <div class="col-lg-10">
+                        @Html.DisplayFor(a => a.Game.Key, new { @class = "form-control" })
+                    </div>
+                  
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(a => a.Game.Name)
+                    <div class="col-lg-10">
+                        @Html.EditorFor(a => a.Game.Name, new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(a => a.Game.Name)
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(a => a.Game.Description)
+                    <div class="col-lg-10">
+                        @Html.EditorFor(a => a.Game.Description, new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(a => a.Game.Description)
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(a => a.Game.Price)
+                    <div class="col-lg-10">
+                        @Html.EditorFor(a => a.Game.Price, new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(a => a.Game.Price)
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(a => a.Game.UnitsInStock)
+                    <div class="col-lg-10">
+                        @Html.EditorFor(a => a.Game.UnitsInStock, new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(a => a.Game.UnitsInStock)
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(a => a.Game.Discontinued)
+                    <div class="col-lg-10">
+                        @Html.EditorFor(a => a.Game.Discontinued, new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(a => a.Game.Discontinued)
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(a => a.Game.Genres)
+                    <div class="col-lg-10">
+                        @Html.ListBoxFor(a => a.SelectedGenres, new MultiSelectList(Model.AvailableGenres, "Name", "Name", Model.SelectedGenres),new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(a => a.SelectedGenres)
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(a => a.Game.Platforms)
+                    <div class="col-lg-10">
+                        @Html.ListBoxFor(a => a.SelectedPlatforms, new MultiSelectList(Model.AvailablePlatforms, "Name", "Name", Model.SelectedPlatforms),new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(a => a.SelectedPlatforms)
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(a => a.Game.Publisher)
+                    <div class="col-lg-10">
+                        @Html.DropDownListFor(a => a.SelectedPublisher, new SelectList(Model.AvailablePublishers, "CompanyName", "CompanyName", Model.SelectedPublisher),new { @class = "form-control" })
+                    </div>
+                    @Html.ValidationMessageFor(a => a.SelectedPublisher)
+                </div>
+
+                <div class="form-group">
+                    Languages:
+                    <div class="col-lg-10">
+                        @Html.DropDownListFor(m => m.LangCode, new SelectList(Model.languages, "Code", "Code"))
+                        @Html.EditorFor(m => m.additionalDescription)
+                    </div>
+                    @Html.ValidationMessageFor(a => a.additionalDescription)
+                </div>
+
+            </fieldset>
+            <div class="form-group">
+                <input type="submit" value="@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Save" class="btn btn-primary"/>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink(@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.BackToList, "AllGames")
+        </div>
+
+
+
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

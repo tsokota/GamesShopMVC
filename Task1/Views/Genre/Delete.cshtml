@@ -1,0 +1,25 @@
+﻿@model Model.Entities.Genre
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Delete</h2>
+
+<h3>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.SureDelete</h3>
+<fieldset>
+    <legend>Genre</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.BackToList, "Index")
+    </p>
+}

@@ -1,0 +1,23 @@
+﻿@model BusinessLogicLayer.ViewModel.GamesViewModel   
+@if (Model.Filters.AvailablePublishers != null)
+{
+       
+    <div class="" style="border-bottom: 1px solid black; padding-bottom: 16px;">
+        <h3 style="">@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Publishers</h3>
+        @foreach (var publisher in Model.Filters.AvailablePublishers)
+        {
+            string check = "";
+            if (Model.Filters.SelectedPublishers != null && Model.Filters.SelectedPublishers.Contains(publisher.Id))
+            {
+                check = "checked=\"checked\"";
+            }
+            <div style="padding-left: 15px; position: relative;">
+                <label style="padding-left: 16px;">
+                    <input style="margin-right: 5px; position: absolute; left: 10px;" type="checkbox" id="Filters_SelectedPublishers" name="Filters.SelectedPublishers" value="@publisher.Id" @check />
+                    @Html.DisplayFor(a => publisher.CompanyName)
+                </label>
+
+            </div>
+        }
+    </div>     
+}

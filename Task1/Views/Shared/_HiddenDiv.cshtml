@@ -1,0 +1,18 @@
+﻿@using Yevhenii_KoliesnikTask1.App_LocalResources
+<div style="display: none">
+    @using (Html.BeginForm("Ban", "Comment", FormMethod.Get))
+    {
+            
+        <input name="CommentId" id="baninput" value="0" />   
+        <input name="UserId" id="banUser" value="0" />    
+        <button type="submit" id="ban" name="banbutton" value="@GlobalRes.Bancomment" />
+    }
+
+    @using (Html.BeginForm("Remove", "Comment", FormMethod.Post))
+    {
+        <input name="CommentId" id="removeinput" value="0" />
+        <button type="submit" id="remove" value="@GlobalRes.Delete" />
+    }
+     <div id="dialog" title="@GlobalRes.DialogWindow">
+    </div>
+</div>

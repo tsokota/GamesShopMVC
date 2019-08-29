@@ -1,0 +1,105 @@
+﻿
+@using System.Web.Optimization
+
+@model Model.Entities.Game
+<div class="row gameItem">
+    <div class="col-md-2 col-sm-3 text-center">
+        <a class="story-img" href="#">
+            <img src="~/Content/images/gamepicture/@Model.Picture" alt="" class="img-circle" height="100" width="100" />
+        </a>
+    </div>
+    <div class="col-md-10 col-sm-9">
+        <h3>
+            @Model.Name
+        </h3>
+        @if (Model.Publisher == null)
+        {
+            <h5>Unknown</h5>
+        }
+        else
+        {
+            <h5>@Model.Publisher.CompanyName</h5>
+        }
+        <div class="row">
+            <div class="col-xs-9">
+                <p>
+                    @if (Model.Description.Length > 100)
+                    {
+                        @Html.Raw(Model.Description.Substring(0, 100).ToString());
+                        @:...
+                    }
+                    else
+                    {
+                        @Html.Raw(Model.Description)
+                        ;
+                    }
+                </p>
+                <p class="lead">
+
+                    @Html.ActionLink(@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Detail,
+                        "GameDetails", new { controller = "Game", gamekey = Model.Key },
+                        new { @class = "btn btn-default" })
+                </p>
+                <p class="pull-right">
+                    @if (Model.Genres != null)
+                    {
+                        foreach (var genre in Model.Genres)
+                        {
+
+                            <span class="label label-default">@genre.Name</span>
+                        }
+                    }
+                    else
+                    {
+
+                        <span class="label label-default">Other</span>
+                    }
+                </p>
+                <ul class="list-inline">
+                    @if (User.IsInRole("Manager"))
+                    {
+                        if (Model.Id > 0)
+                        {
+                            <li>
+                                <i class="glyphicon glyphicon-pencil"></i>
+                                @Html.ActionLink(@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Edit, "update", new { controller = "Game", gamekey = Model.Key })
+                            </li>
+
+                            <li>
+                                <i class="glyphicon glyphicon-remove"></i>
+                                @Html.ActionLink(@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Delete, "remove", new { controller = "Game", gamekey = Model.Key })
+                            </li>
+                        }
+                        else
+                        {
+
+                            <li>
+                                <i class="glyphicon glyphicon-ban-circle"></i>
+                                Обновление запрещено
+                            </li>
+                        }
+                    }
+
+                    <li>
+                        @if (@Model.GameProduction == default(DateTime))
+                        {
+                            <text>UKNOWN</text>
+                        }
+                        else
+                        {
+                            @Model.GameProduction.ToShortDateString()
+                        }
+                    </li>
+
+                    <li>
+                        <i class="glyphicon glyphicon-usd"></i>
+                        @Model.Price uah
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

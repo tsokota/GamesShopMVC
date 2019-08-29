@@ -1,0 +1,35 @@
+﻿@model Model.Entities.Genre
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Genre</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <p>
+            <input type="submit" value="@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.BackToList, "Index")
+</div>
+
+

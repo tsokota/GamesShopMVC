@@ -1,0 +1,18 @@
+﻿@model Model.Entities.User
+@if (User.Identity.IsAuthenticated)
+{
+    if (Model != null)
+    {
+       
+    
+      <li class="pull-right">  @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Logout, "Logout", "Autentification",new { @class = "btn btn-primary"})</li>
+      @Model.Email
+    }
+}
+else
+{
+    <i class="glyphicon glyphicon-user"></i>
+    <li class="pull-right">@Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Login, "Login", "Autentification",new { @class = "btn btn-primary"})</li>
+    <li class="pull-right">@Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Registers, "Register", "Autentification",new { @class = "btn btn-primary"})</li>
+}
+

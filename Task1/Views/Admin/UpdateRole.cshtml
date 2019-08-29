@@ -1,0 +1,39 @@
+﻿@model BusinessLogicLayer.ViewModel.RoleViewModel
+
+@{
+    ViewBag.Title = "UpdateRole";
+}
+
+
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+  <fieldset>
+      <legend>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Edit</legend>
+       @Html.HiddenFor(q => q.Role.Id)
+		<div>
+			@Html.LabelFor(q => q.Role.NameRole)
+			@Html.EditorFor(q => q.Role.NameRole)
+			@Html.ValidationMessageFor(q => q.Role.NameRole)
+		</div>
+
+		@if(Model.Users != null)
+  {
+		<div>
+			Users
+
+			@Html.DropDownListFor(q => q.SelectedUsers, new SelectList(Model.Users, "Id", "Login", Model.SelectedUsers.Select(q => new { Value = q})), new { multiple = true })
+		</div>
+}
+        <p>
+            <input type="submit" value="@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink(@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.BackToList, "AuthRoles")
+</div>

@@ -1,0 +1,23 @@
+﻿@model BusinessLogicLayer.ViewModel.GamesViewModel   
+@if (Model.Filters.AvailableGenres != null)
+{
+               
+    <div class="" style="border-top: 1px solid black; border-bottom: 1px solid black; padding-bottom: 16px;">
+        <h3 style="">@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Genres</h3>
+        @foreach (var genre in Model.Filters.AvailableGenres)
+        {
+            string check = "";
+            if (Model.Filters.SelectedGenres != null && Model.Filters.SelectedGenres.Contains(genre.Id))
+            {
+                check = "checked=\"checked\"";
+            }
+            <div style="padding-left: 15px; position: relative;">
+                <label style="padding-left: 16px;">
+                    <input type="checkbox" style="margin-right: 5px; position: absolute; left: 10px;" id="Filters_SelectedGenres" name="Filters.SelectedGenres" value="@genre.Id" @check />
+                    @Html.DisplayFor(a => genre.Name)
+                </label>
+
+            </div>
+        }
+    </div>
+}

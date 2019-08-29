@@ -1,0 +1,17 @@
+﻿@model BusinessLogicLayer.ViewModel.OrderHistoryViewModel
+<h2>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.OrderHistory</h2>
+@System.Web.Optimization.Scripts.Render("~/OrderHistoryBoundle")
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.StartDateToString)
+    @Html.HiddenFor(m => m.EndDateToString)
+    <input type="date" id="StartDateDTP" />
+    <input type="date" id="EndDateDTP" />
+    <input type="submit" id="show" value="Show" />
+
+    foreach (var item in Model.OrderList)
+    {
+        @Html.Partial("_orderDetails", item)
+    }
+   
+}

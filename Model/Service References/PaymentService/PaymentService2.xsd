@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFService.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFService.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PaymentData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmountOfPayment" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CVV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpirationDateMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ExpirationDateYear" type="xs:int" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberCard" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PaymentType" type="tns:PaymentType" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PurposeOfPayment" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentData" nillable="true" type="tns:PaymentData" />
+  <xs:simpleType name="PaymentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Visa" />
+      <xs:enumeration value="MasterCard" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PaymentType" nillable="true" type="tns:PaymentType" />
+  <xs:complexType name="PaymentResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PaymentStatus" type="tns:PaymentStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentResult" nillable="true" type="tns:PaymentResult" />
+  <xs:simpleType name="PaymentStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Failed" />
+      <xs:enumeration value="NotEnoughMoney" />
+      <xs:enumeration value="CardNotExist" />
+      <xs:enumeration value="UserNotFound" />
+      <xs:enumeration value="PhoneCodeInvalid" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PaymentStatus" nillable="true" type="tns:PaymentStatus" />
+</xs:schema>

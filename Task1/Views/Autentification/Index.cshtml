@@ -1,0 +1,36 @@
+﻿@model BusinessLogicLayer.ViewModel.LoginView
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Login</h2>
+
+@using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <fieldset>
+        <legend>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Login</legend>
+        <div class="control-group">
+            <label class="control-label" for="Email">
+                Name</label>
+            <div class="controls">
+                @Html.TextBox("Name", Model.Name, new { @class = "input-xlarge" })
+                <p class="help-block">Enter name</p>
+                @Html.ValidationMessage("Name")
+            </div>
+
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="Password">
+                Password</label>
+            <div class="controls">
+                @Html.Password("Password", Model.Password, new { @class = "input-xlarge" })
+                @Html.ValidationMessage("Password")
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                Login</button>
+        </div>
+    </fieldset>
+}

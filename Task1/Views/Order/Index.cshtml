@@ -1,0 +1,45 @@
+﻿@model List<Model.Entities.Order>
+@{
+    ViewBag.Title = "Index";
+}
+@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Order
+@foreach (var item in Model)
+{
+   
+        
+    <div class="jumbotron">
+        <div class="display-label">
+            @Html.DisplayNameFor(model => item.OrderDate)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => item.OrderDate)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => item.User.Login)
+            <b>@Html.DisplayFor(model => item.User.Login)</b>
+        </div>
+        <div>
+            @Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Status:<b>
+                @Html.DisplayFor(model => item.OrderStatus)
+            </b>
+
+        </div>
+
+
+        @foreach (var detail in item.OrderDetails)
+        {   
+            <fieldset>
+                <legend>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Detail</legend>
+                <ul>
+                    <li>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Name : <b>@detail.Product.Name</b></li>
+                    <li>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Price :    @detail.Price</li>
+                    <li>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Quantity : @detail.Quantity</li>
+                    <li>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Discount : @detail.Discount </li>
+                </ul>
+            </fieldset>
+        }
+        @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.MakeOrder, "MakeOrder", "Order", new { orderId = item.Id }, null)
+        @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Edit, "Edit", new { id = item.Id })
+    </div>
+}

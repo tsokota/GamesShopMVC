@@ -1,0 +1,116 @@
+2014-08-22 02:08:02.5723|ERROR|Yevhenii_KoliesnikTask1.Controllers.GameController|some error: Controller: Game, Action: AllGame
+Object reference not set to an instance of an object.
+2014-08-22 02:08:02.6403|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:01:14.1323205
+2014-08-22 02:08:02.6403|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 02:11:20.1106|ERROR|Yevhenii_KoliesnikTask1.Controllers.GameController|some error: Controller: Game, Action: AllGame
+An exception occurred while initializing the database. See the InnerException for details.
+2014-08-22 02:11:20.1226|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:01:49.4144958
+2014-08-22 02:11:20.1226|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 02:11:49.6803|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|result succsess - AllGames
+2014-08-22 02:11:49.6903|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|Action  -> AllGames() have worked success!
+2014-08-22 02:11:49.6903|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:05.8725792
+2014-08-22 02:11:49.6903|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 02:13:40.1366|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|result succsess - AllGames
+2014-08-22 02:13:40.1366|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|Action  -> AllGames() have worked success!
+2014-08-22 02:13:40.1366|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:46.2281795
+2014-08-22 02:13:40.1366|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 02:14:45.6143|ERROR|Yevhenii_KoliesnikTask1.Controllers.GameController|some error: Controller: Game, Action: AllGame
+An exception occurred while initializing the database. See the InnerException for details.
+2014-08-22 02:14:45.6403|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:18.1834161
+2014-08-22 02:14:45.6403|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 02:15:14.9630|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|result succsess - AllGames
+2014-08-22 02:15:14.9730|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|Action  -> AllGames() have worked success!
+2014-08-22 02:15:14.9730|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:05.5277537
+2014-08-22 02:15:14.9800|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 02:16:25.8131|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|result succsess - AllGames
+2014-08-22 02:16:25.8231|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|Action  -> AllGames() have worked success!
+2014-08-22 02:16:50.0575|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:29.7597028
+2014-08-22 02:16:50.0575|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 02:17:45.3416|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|result succsess - AllGames
+2014-08-22 02:17:45.3536|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|Action  -> AllGames() have worked success!
+2014-08-22 02:17:45.3536|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:27.4968188
+2014-08-22 02:17:45.3536|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 02:19:52.5579|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|result succsess - AllGames
+2014-08-22 02:19:52.5709|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|Action  -> AllGames() have worked success!
+2014-08-22 02:19:52.5709|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:01:30.8598654
+2014-08-22 02:19:52.6499|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 02:20:44.9379|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|result succsess - AllGames
+2014-08-22 02:20:44.9529|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|Action  -> AllGames() have worked success!
+2014-08-22 02:20:44.9529|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:05.0151169
+2014-08-22 02:20:44.9529|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 02:21:13.3635|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|result succsess - AllGames
+2014-08-22 02:21:13.3775|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|Action  -> AllGames() have worked success!
+2014-08-22 02:21:13.3775|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:05.0350481
+2014-08-22 02:21:13.3775|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 02:22:11.6499|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|result succsess - AllGames
+2014-08-22 02:22:11.6599|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|Action  -> AllGames() have worked success!
+2014-08-22 02:22:11.6599|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:23.9448906
+2014-08-22 02:22:11.6599|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 02:25:11.1601|ERROR|Yevhenii_KoliesnikTask1.Controllers.GameController|some error: Controller: Game, Action: AllGame
+Object reference not set to an instance of an object.
+2014-08-22 02:25:11.1751|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:17.9377993
+2014-08-22 02:25:11.1851|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 02:28:03.3970|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|result succsess - AllGames
+2014-08-22 02:28:03.4120|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|Action  -> AllGames() have worked success!
+2014-08-22 02:28:03.4120|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:31.8152265
+2014-08-22 02:28:03.4120|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 02:37:16.4436|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|result succsess - AllGames
+2014-08-22 02:37:16.4546|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|Action  -> AllGames() have worked success!
+2014-08-22 02:37:29.1033|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:27.0714138
+2014-08-22 02:37:29.1033|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 02:44:13.7125|ERROR|Yevhenii_KoliesnikTask1.Controllers.GameController|some error: Controller: Game, Action: AllGame
+Cannot drop database "GAME_9938743451cc4e3cb55647437402d207" because it is currently in use.
+2014-08-22 02:44:13.7215|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:20.7808163
+2014-08-22 02:44:13.7215|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 02:55:46.0591|ERROR|Yevhenii_KoliesnikTask1.Controllers.GameController|some error: Controller: Game, Action: AllGame
+Cannot drop database "GAME_9938743451cc4e3cb55647437402d207" because it is currently in use.
+2014-08-22 02:55:46.0691|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:20.6786135
+2014-08-22 02:55:46.0691|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 02:56:47.4766|ERROR|Yevhenii_KoliesnikTask1.Controllers.GameController|some error: Controller: Game, Action: AllGame
+Cannot drop database "GAME_9938743451cc4e3cb55647437402d207" because it is currently in use.
+2014-08-22 02:56:47.4866|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:20.7060076
+2014-08-22 02:56:47.4866|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 02:57:37.2494|ERROR|Yevhenii_KoliesnikTask1.Controllers.GameController|some error: Controller: Game, Action: AllGame
+Cannot drop database "GAME_9938743451cc4e3cb55647437402d207" because it is currently in use.
+2014-08-22 02:57:37.2504|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:40.8934143
+2014-08-22 02:57:37.2504|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 02:58:09.7253|ERROR|Yevhenii_KoliesnikTask1.Controllers.GameController|some error: Controller: Game, Action: AllGame
+Cannot drop database "GAME_9938743451cc4e3cb55647437402d207" because it is currently in use.
+2014-08-22 02:58:09.7353|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:20.8228883
+2014-08-22 02:58:09.7353|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 02:59:24.0205|ERROR|Yevhenii_KoliesnikTask1.Controllers.GameController|some error: Controller: Game, Action: AllGame
+Cannot drop database "GAME_9938743451cc4e3cb55647437402d207" because it is currently in use.
+2014-08-22 02:59:24.0345|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:20.6894734
+2014-08-22 02:59:24.0345|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 03:00:39.0088|ERROR|Yevhenii_KoliesnikTask1.Controllers.GameController|some error: Controller: Game, Action: AllGame
+Cannot drop database "GAME_9938743451cc4e3cb55647437402d207" because it is currently in use.
+2014-08-22 03:00:39.0228|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:20.7655249
+2014-08-22 03:00:39.0228|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 03:02:23.8798|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|result succsess - AllGames
+2014-08-22 03:02:23.8898|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|Action  -> AllGames() have worked success!
+2014-08-22 03:02:23.8898|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:48.4604557
+2014-08-22 03:02:23.8898|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 03:03:02.1180|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|result succsess - AllGames
+2014-08-22 03:03:02.1290|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|Action  -> AllGames() have worked success!
+2014-08-22 03:03:02.1290|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:06.0462275
+2014-08-22 03:03:02.1290|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 03:10:01.4990|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|result succsess - AllGames
+2014-08-22 03:10:01.5090|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|Action  -> AllGames() have worked success!
+2014-08-22 03:10:01.5160|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:06.1099484
+2014-08-22 03:10:01.5160|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 05:20:32.2449|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|result succsess - AllGames
+2014-08-22 05:20:32.2709|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|Action  -> AllGames() have worked success!
+2014-08-22 05:20:32.2709|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:19.6614370
+2014-08-22 05:20:32.2709|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 05:21:49.2373|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|result succsess - AllGames
+2014-08-22 05:21:49.2373|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|Action  -> AllGames() have worked success!
+2014-08-22 05:21:49.2373|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:05.9133011
+2014-08-22 05:21:49.2373|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 05:44:45.9760|ERROR|Yevhenii_KoliesnikTask1.Controllers.GameController|some error: Controller: Game, Action: AllGame
+Cannot drop database "GAME_4f13b4e9f01b4b58bfb0b46eb52e280a" because it is currently in use.
+2014-08-22 05:44:45.9850|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:20.6535170
+2014-08-22 05:44:45.9850|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request
+2014-08-22 05:45:15.2707|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|result succsess - AllGames
+2014-08-22 05:45:15.2797|DEBUG|Yevhenii_KoliesnikTask1.Controllers.GameController|Action  -> AllGames() have worked success!
+2014-08-22 05:45:15.2797|INFO|Yevhenii_KoliesnikTask1.Filters.MyAttributeFilter|MyAttributeFilter: 00:00:05.7394697
+2014-08-22 05:45:15.2797|INFO|Yevhenii_KoliesnikTask1.Filters.MyGlobalFilter|::1IP some request

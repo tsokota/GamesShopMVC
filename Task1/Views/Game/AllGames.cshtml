@@ -1,0 +1,103 @@
+﻿@using System.Web.Optimization
+@model BusinessLogicLayer.ViewModel.GamesViewModel
+
+@Scripts.Render("~/StoreJS")
+@{
+    ViewBag.Title = Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.AllGames;
+}
+@{ string link = @Url.Action("GameDetails", "Game", "{{:Key}}"); }
+@section rightSidebar {
+
+    @Html.Partial("_Filters", Model)
+}
+
+
+<div class="panel" id="gamesList">
+    <div class="panel-body">
+        @if (User.IsInRole("Manager"))
+        {
+            @Html.ActionLink(@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Create, "New", "Game")
+        }
+
+        @if (@Model.Games != null)
+        {
+            foreach (var game in Model.Games)
+            {
+                Html.RenderPartial("ShortGameDetails", game);
+            <hr />
+            }
+        }
+        else
+        {
+            @:@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.GamesNotFound
+                }
+
+    </div>
+</div>
+@section scripts
+{
+  
+
+    <script id="gameTemplate" type="text/jsrender-tmpl">
+        <div class="gameItem">
+          <div class="col-md-2 col-sm-3 text-center">
+        <a class="story-img" href="#">
+            <img src="/Content/images/gamepicture/{{:Picture}}" alt="" class="img-circle" height="100" width="100" />
+        </a>
+    </div>
+    <div class="col-md-10 col-sm-9">
+        <h3>
+           {{:Name}}
+        </h3>
+   
+       
+       
+            <h5>{{:Publisher.CompanyName}}</h5>
+    
+        <div class="row">
+            <div class="col-xs-9">
+                <p>
+                   {{:Description}}
+                </p>
+                <p class="lead">
+           <a href='@Url.Action("GameDetails", "Game")?gamekey={{:Key}}'  class = "btn btn-default" >@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Detail</a>
+                 
+                </p>
+                <p class="pull-right">
+        
+                 {{for Genres}}
+                  <span class="label label-default">{{:Genres}}</span>
+                 {{else}}
+                  <span class="label label-default">Other</span>
+                 {{/for}}
+                  
+                </p>
+                <ul class="list-inline">
+                    <li>
+           {{if GameProduction != null }}
+                      
+                            <text>UKNOWN</text>
+                       
+                        {{else}}
+                        
+                           {{:GameProduction}}
+                        {{/if}}
+                    </li>
+
+                    <li>
+                        <i class="glyphicon glyphicon-usd"></i>
+                        {{:Price}} uah
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </script>
+
+
+
+    <script src="http://www.jsviews.com/download/jsrender.js"></script>
+    @Scripts.Render("~/GameFilters")
+}

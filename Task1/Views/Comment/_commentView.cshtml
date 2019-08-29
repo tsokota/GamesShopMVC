@@ -1,0 +1,42 @@
+﻿@model Model.Entities.Comment
+<tr>
+    @{
+
+    }
+    @if (Model.ParentName != null)
+    {
+        <td rowspan="4"></td>
+    }
+<tr>
+    <td>
+        by
+        <b>
+            @Html.DisplayFor(modelModel => Model.AuthorName),
+            @Html.DisplayFor(modelModel => Model.DateComment)
+        </b>:
+
+    </td>
+<tr>
+    <td>
+        @if (Model.ParentName != null)
+        {
+            <b>@Html.DisplayFor(modelModel => Model.ParentName),</b>
+        }
+        @Html.Raw(Model.Body)
+    </td>
+</tr>
+<tr>
+    <td>
+        <small>
+        @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Answer, "comments", "Comment", new { parentCommentId = Model.Id, answer = "Answer" }, null)
+        @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Quote, "comments", "Comment", new { parentCommentId = Model.Id, answer = "Quote" }, null)
+       
+            @if (User.IsInRole("Moderator"))
+            {
+                  <button id="@Model.Id" class="openId" name="banbatton" onclick="setID(@Model.Id, @Model.User.Id);">@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Delete/BAN</button>
+            }
+            </small>
+    </td>
+</tr>
+</tr>
+   

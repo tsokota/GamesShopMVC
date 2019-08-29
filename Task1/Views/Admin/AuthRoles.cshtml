@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Model.Entities.Role>
+
+@{
+    ViewBag.Title = "GetAllRoles";
+}
+
+<fieldset>
+	<legend>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Roles</legend>
+	@Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Create, "CreateRole", "Admin") |
+	@Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Users, "AuthUsers", "Admin")
+	<div>
+		@foreach (var u in Model)
+  {
+	  <fieldset>
+          <legend>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Roles</legend>
+		  <div>
+			  @Html.LabelFor(q => u.NameRole):
+			   @Html.DisplayFor(q=> u.NameRole)
+		  </div>
+		  
+		  <div>
+			@Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Detail, "RoleDetails", "Admin", new { roleId = u.Id }, null) | 
+			@Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Edit, "UpdateRole", "Admin", new { roleId = u.Id }, null) | 
+			@Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Delete, "DeleteRole", "Admin", new { roleId = u.Id }, null)
+		  </div>
+	  </fieldset>
+  }
+	</div>
+</fieldset>

@@ -1,0 +1,29 @@
+﻿@model List<Model.Entities.Publisher>
+@{
+    ViewBag.Title = "AllPublisher";
+}
+
+<h2>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Publishers</h2>
+
+@Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Create, "New")
+
+@foreach (var item in Model)
+{
+    <fieldset>
+        <legend>@item.CompanyName</legend>
+        <p>@item.Description</p>
+        <p>@item.HomePage</p>
+
+
+        @if (item.NorthWindId == 0)
+        {
+            @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Edit, "Update", "Publisher", new { companyName = item.CompanyName, northWindId = item.NorthWindId }, null)
+            @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Delete, "Delete", "Publisher", new { companyName = item.CompanyName, northWindId = item.NorthWindId }, null)
+        }
+
+
+
+        @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Detail, "PublisherDetails", "Publisher", new { companyName = item.CompanyName, northWindId = item.NorthWindId }, null)
+
+    </fieldset>
+}

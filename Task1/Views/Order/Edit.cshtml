@@ -1,0 +1,51 @@
+﻿@model BusinessLogicLayer.ViewModel.OrderViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Order Edit</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+    
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CustomerId)
+            @Html.ValidationMessageFor(model => model.CustomerId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OrderDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OrderDate)
+            @Html.ValidationMessageFor(model => model.OrderDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ShippedDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ShippedDate)
+            @Html.ValidationMessageFor(model => model.ShippedDate)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(m => m.OrderStatus, new SelectList(Model.ListOrderStatus))
+        </div>     
+        <p>
+            <input type="submit" value="@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink(@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.BackToList, "Index")
+</div>
+
+

@@ -1,0 +1,45 @@
+﻿@model Model.Entities.User
+
+@{
+    ViewBag.Title = "DeleteUser";
+}
+
+
+<h3>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.SureDelete</h3>
+<fieldset>
+   
+    <legend>Delete User</legend>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Login)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Login)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+	@if(Model.UserRoles!= null && Model.UserRoles.Count > 0)
+ {
+    <div class="display-label">
+        Roles
+    </div>
+	 foreach(var r in Model.UserRoles)
+	 {
+    <div class="display-field">
+        @Html.DisplayFor(model => r.NameRole)
+    </div>
+	}
+ }
+
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.BackToList, "AuthUsers")
+    </p>
+}

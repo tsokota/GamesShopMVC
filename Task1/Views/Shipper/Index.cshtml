@@ -1,0 +1,14 @@
+﻿@model List<DAL.Shipper>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Shippers</h2>
+@foreach (var item in Model)
+{
+    <fieldset>
+    <legend>@item.CompanyName</legend>
+    <p>@item.Phone</p>
+
+  </fieldset>
+}

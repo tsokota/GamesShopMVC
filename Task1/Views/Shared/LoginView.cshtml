@@ -1,0 +1,19 @@
+﻿@model BusinessLogicLayer.ViewModel.LoginView
+@{
+    
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+
+
+@if (Model != null)
+{
+    <li>@Model.Name</li>
+    <li>@Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Logout, "Logout", "Login")</li>
+}
+else
+{
+    <li>@Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Login, "Index", "Login")</li>
+    <li>@Html.ActionLink(Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Registers, "Register", "User")</li>
+}

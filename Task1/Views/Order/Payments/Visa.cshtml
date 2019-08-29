@@ -1,0 +1,39 @@
+﻿@model BusinessLogicLayer.ViewModel.VisaViewModel
+
+@{
+    ViewBag.Title = "Visa";
+    Layout = string.Empty;
+}
+
+<h2>Visa</h2>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    @Html.HiddenFor(x => x.OrderId)
+    <div>
+        Price
+        @Html.DisplayFor(x => x.Price)
+        <br />
+        User name: 
+    @Html.TextBoxFor(a => a.UserName)
+        @Html.ValidationMessageFor(x => x.UserName)
+        <br />
+        Card number:
+    @Html.TextBoxFor(a => a.CardNumber)
+        @Html.ValidationMessageFor(x =>x.CardNumber)
+        <br />
+        Date of expire:
+    @Html.TextBoxFor(a => a.DateToExpire)
+        @Html.ValidationMessageFor(x => x.DateToExpire)
+        <br />
+        CVV2/CVC2:
+    @Html.TextBoxFor(a => a.CVV2)
+        @Html.ValidationMessageFor(x => x.CVV2)
+    </div>
+    <input type="submit" value="@Yevhenii_KoliesnikTask1.App_LocalResources.GlobalRes.Pay" />
+}
